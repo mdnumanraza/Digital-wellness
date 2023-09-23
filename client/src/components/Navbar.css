@@ -1,7 +1,7 @@
 .container {
     margin: 0 auto;
     padding: 0 15px;
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
     height: 100%;
@@ -9,11 +9,16 @@
 
 .navbar {
     height: 60px;
-    background: var(--primary);
+    background: var(--bg-nav);
     position: relative;
 }
 
-.logo {}
+.logo {
+    background: rgb(193,131,237);
+    background: linear-gradient(90deg, rgba(193,131,237,1) 0%, rgba(69,118,148,1) 46%, rgba(94,73,200,1) 96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .menu-icon {
     display: none;

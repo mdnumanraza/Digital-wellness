@@ -2,7 +2,8 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
-import "./navbar.css";
+import "./Navbar.css";
+import { FiAlignJustify } from "react-icons/fi";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -22,12 +23,12 @@ const Navbar = () => {
   return (
     <nav className="navbar container">
         <div className="logo">
-          <h2>logo</h2>
+          <h2>Digital Wellness</h2>
         </div>
         <div className="menu-icon" 
         onClick={handleShowNavbar}
         >
-          click
+          <FiAlignJustify/>
         </div>
         <div className={`nav-elements  
         ${showNavbar && "active"}`
@@ -49,16 +50,21 @@ const Navbar = () => {
            {user && <li>
               <NavLink to="/profile">Profile</NavLink>
             </li>}
+           {user && <li>
+              <NavLink to="/community">Community</NavLink>
+            </li>}
 
             <li>
             {user && (
             <div>
-              <span>{user.username}</span>
               <button onClick={handleClick}>Log out</button>
             </div>
           )}
             </li>
           </ul>
+          <div style={{color:'white'}}>
+            {/* {user.username} */}
+            </div>
 
       </div>
     </nav>
