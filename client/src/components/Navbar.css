@@ -1,7 +1,7 @@
-.container {
+/* .container {
     margin: 0 auto;
     padding: 0 15px;
-    display: flex !important;
+    display: flex ;
     justify-content: space-between;
     align-items: center;
     height: 100%;
@@ -101,4 +101,4 @@
         margin-right: unset;
         margin-top: 22px;
     }
-}
+} */

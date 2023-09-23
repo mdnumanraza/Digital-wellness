@@ -46,7 +46,9 @@ const PostDetails = ({ posts }) => {
         <img src={posts.profile} alt="user_image" className="user__image"/>
 
         <div className="user__info">
-          <h5>{posts.uname}</h5>
+          <h5>{
+          posts.uname == user.username ? 'You' : posts.uname
+          }</h5>
           <small>{formatDistanceToNow(new Date(posts.createdAt), { addSuffix: true })}</small>
         </div>
 

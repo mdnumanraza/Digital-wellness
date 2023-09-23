@@ -8,10 +8,14 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ProfilePage from './pages/Profile';
 import Community from './pages/Community';
+import Report from './pages/Report';
+import Footer from './components/Footer';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
 
   const { user } = useAuthContext()
+  // const admin = user.username || 0;
 
   return (
     <div className="App">
@@ -43,10 +47,24 @@ function App() {
               path="/community" 
               element={user ? <Community/> : <Navigate to="/login" />} 
             />
+            <Route 
+              path="/report" 
+              element={user ? <Report/> : <Navigate to="/login" />} 
+            />
+            <Route 
+              path="/admin" 
+              element={
+                // admin==='numan' ? 
+               user ? <AdminDashboard/> : <Navigate to="/login" />} 
+            />
 
           </Routes>
         </div>
+        {user &&
+          <Footer/>
+        }
       </BrowserRouter>
+
     </div>
   );
 }

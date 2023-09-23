@@ -31,12 +31,16 @@ const Community = () => {
   return (
     <div>
        <div className="home">
+
+        <div className="postform">
+        <PostForm />
+        </div>
+
       <div className="workouts">
         {posts && posts.map((posts) => (
           <PostDetails key={posts._id} posts={posts} />
         ))}
       </div>
-      <PostForm />
     </div>
     </div>
   )

@@ -54,6 +54,19 @@ const Navbar = () => {
               <NavLink to="/community">Community</NavLink>
             </li>}
 
+           {user && <li>
+              <NavLink to="/report">Report Cyber bullying</NavLink>
+            </li>}
+
+           {/* {user.username==='numan' &&  */}
+           <li>
+              <NavLink to="/admin">Admin Dashboard</NavLink>
+            </li>
+            {/* } */}
+
+          <div style={{color:'white'}}>
+            {/* {user.username} */}
+            </div>
             <li>
             {user && (
             <div>
@@ -62,9 +75,6 @@ const Navbar = () => {
           )}
             </li>
           </ul>
-          <div style={{color:'white'}}>
-            {/* {user.username} */}
-            </div>
 
       </div>
     </nav>
