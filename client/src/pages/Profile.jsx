@@ -1,6 +1,7 @@
 import { useState } from "react";
 import avatar from '../assets/profile.png'
 import { useAuthContext } from "../hooks/useAuthContext"
+import './Profile.css'
 
 const ProfilePage = () => {
   const {user} = useAuthContext()
@@ -14,32 +15,19 @@ const ProfilePage = () => {
   };
 
   return (
-    <form className="login" onSubmit={handleSubmit}>
-    <div style={{color:'Black'}}>
-      hello
-      <div>
-     <h2>Username : {user.username}</h2>
-     <h2>Email : {user.email}</h2>
-    </div>
-    </div>
-      <h3 className="center">Profile</h3>
-      <img src={avatar} alt='img'/>
-      <label>Email address:</label>
-      <input
-        type="email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-      />
-      <label>Username:</label>
-      <input
-        type="text"
-      />
-      <div className="submit">
-        <button>Edit</button>
+    <div className="profile">
+      <div className='right'>
+        <img className='pro-img' src={user.image || avatar} alt="" />
+        <p>{user.username}</p>
       </div>
-    </form>
-  );
-};
+      <div className="left">
+        <h4>Email id </h4>
+        <p>{user.email}</p>
+        <h4>Description</h4>
+        <p> {user.desc}</p>
+      </div>
+    </div>
+)};
 
 export default ProfilePage;
 
