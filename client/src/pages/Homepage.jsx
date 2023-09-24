@@ -7,7 +7,7 @@ const HomePage = () => {
     <div>
       <HomeSection />
      
-      <section className="newsletter section container pd">
+      <section className="">
         <div className="newsletter__bg grid">
           <div>
             <h2 className="newsletter__title">Consult Doctor</h2>
@@ -23,7 +23,7 @@ const HomePage = () => {
           </form>
         </div>
       </section>
-      <section className="newsletter section container pd-1">
+      <section className="  ">
         <div className="newsletter__bg grid">
           <h2 className="newsletter__title">Report CyberBulling</h2>
           <p className="newsletter__description">

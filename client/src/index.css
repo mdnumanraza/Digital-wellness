@@ -128,7 +128,7 @@ form.signup, form.login {
 }
 
 img {
-    height: 200px;
+    /* height: 200px; */
     /* border-radius: 50%; */
     /* border: 3px solid #d0d0d0; */
 }
@@ -555,7 +555,7 @@ th {
     --header-height: 3.5rem;
 
     /*========== Colors ==========*/
-    --first-color: hsl(31, 100%, 70%);
+    --first-color: hsl(118, 100%, 85%);
     --button-color: hsl(0, 0%, 17%);
     --button-color-alt: hsl(0, 0%, 21%);
     --title-color: hsl(0, 0%, 15%);
@@ -654,6 +654,7 @@ th {
 
 .home__img {
     width: 240px;
+    border-radius: 0;
 }
 
 .home__img-bg {
@@ -666,6 +667,10 @@ th {
     align-items: flex-end;
     justify-self: flex-end;
     transform: translateX(1.5rem);
+}
+
+.home__img-bg img{
+    height: 400px;
 }
 
 .home__social {
@@ -741,79 +746,8 @@ th {
     padding: 1rem 1.5rem;
 }
 
-/*=============== FEATURED ===============*/
-.featured__container {
-    row-gap: 2.5rem;
-}
-
-.featured__card {
-    position: relative;
-    text-align: center;
-    background-color: var(--container-color);
-    padding-top: 2rem;
-    border: 1px solid var(--border-color);
-    overflow-y: hidden;
-    transition: .3s;
-}
-
-.featured__tag {
-    background-color: var(--first-color);
-    padding: .5rem 1rem;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
-    position: absolute;
-    transform: rotate(-90deg);
-    left: -1rem;
-    top: 3rem;
-}
-
-.featured__img {
-    height: 214px;
-    margin-bottom: var(--mb-1);
-}
-
-.featured__title,
-.featured__price {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-bold);
-}
-
-.featured__title {
-    text-transform: uppercase;
-    margin-bottom: var(--mb-0-75);
-}
-
-.featured__price {
-    display: block;
-    color: var(--first-color);
-    transition: .3s;
-}
-
-.featured__button {
-    font-size: var(--small-font-size);
-    transform: translateY(1rem);
-    opacity: 0;
-}
-
-.featured__card:hover {
-    box-shadow: 0 12px 32px hsla(0, 0%, 20%, .1);
-    padding: 2rem 0 3rem 0;
-}
-
-.featured__card:hover .featured__button {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.featured__card:hover .featured__price {
-    margin-bottom: var(--mb-1-5);
-}
-
-/*=============== STORY ===============*/
 .story__container {
-    row-gap: 7.5rem;
+    row-gap: 1rem;
 }
 
 .story__title {
@@ -824,7 +758,6 @@ th {
 .story__data {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 30px;
 }
 
@@ -841,6 +774,10 @@ th {
     width: 250px;
 }
 
+.story__img {
+ border-radius: 0;
+}
+
 .story__square {
     height: 250px;
     background-color: var(--first-color);
@@ -855,7 +792,7 @@ th {
 /*=============== PRODUCTS ===============*/
 .products__container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .products__card {
@@ -1376,7 +1313,7 @@ th {
 
 @media screen and (min-width: 767px) {
     .section {
-        padding: 8rem 0 1rem;
+        padding: 0 1rem;
     }
 
     .cart {
@@ -1584,9 +1521,9 @@ th {
 
 /*Profile.css*/
 .profile {
-    max-width: 400px;
+    max-width: 800px;
     border-radius: 16px;
-    /* height: 200px; */
+    height: fit-content;
     display: flex;
     margin: 40px auto;
     box-shadow: 10px 10px 10px #9a9a9a;
@@ -1637,13 +1574,17 @@ th {
     }
 }
 
-.community{
-    
-    width: 1000px;
-    display: flex;
-    flex-direction: column;
+.pd {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0;
 }
 
-.community .workouts{
-    max-width: 500px;
+.pd-1 {
+    padding: 45px 0 0 0;
+    margin: 0;
+}
+
+.pd-1 .left {
+    width: 100%;
 }

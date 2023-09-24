@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const StorySection = () => {
   return (
-    <section className="story section container">
+    <section className=" ">
       <div className="story__container grid">
         <div className="story__data">
           <h2 className="section__title story__section-title">Our Story</h2>
