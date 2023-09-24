@@ -11,7 +11,7 @@ const HomePage = () => {
       <section className="">
         <div className="newsletter__bg grid">
           <div>
-            <h2 className="newsletter__title">Consult Doctor</h2>
+            <h2 className="newsletter__title">Consult Psychiatrist</h2>
             <p className="newsletter__description">
               Don't miss out on your discounts. Subscribe to our email
               newsletter to get the best offers, discounts, coupons, gifts and
@@ -20,7 +20,11 @@ const HomePage = () => {
           </div>
 
           <form action="" className="newsletter__subscribe">
-            <button className="button">SUBSCRIBE</button>
+              <Link to='/consult' style={{color:'white'}}>
+            <button className="button">
+                  Psychiatrist
+            </button>
+              </Link>
           </form>
         </div>
       </section>
