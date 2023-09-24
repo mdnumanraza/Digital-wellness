@@ -1,10 +1,11 @@
-/* .profile {
+.profile {
     max-width: 500px;
     border-radius: 16px;
-    height: 300px;
+    height: fit-content;
     display: flex;
     margin: 50px auto;
     box-shadow: 10px 10px 10px #9a9a9a;
+    
 }
 
 .right {
@@ -31,7 +32,7 @@
 
 .left {
     width: 60%;
-    height: 100%;
+    height: fit-content;
     padding-left: 20px;
     padding-top: 30px;
     background-color: rgb(254, 254, 255);
@@ -60,5 +61,6 @@
     .left{
         width: 100%;
         border-radius: 0 0 16px 16px;
+        height: fit-content;
     }
-} */
+}
