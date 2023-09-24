@@ -1,0 +1,41 @@
+import HomeSection from "../components/HomeSection"
+import StorySection from "../components/StorySection"
+// import './Home.css'
+
+const HomePage = () => {
+  return (
+    <div>
+      <HomeSection />
+     
+      <section className="newsletter section container pd">
+        <div className="newsletter__bg grid">
+          <div>
+            <h2 className="newsletter__title">Consult Doctor</h2>
+            <p className="newsletter__description">
+              Don't miss out on your discounts. Subscribe to our email
+              newsletter to get the best offers, discounts, coupons, gifts and
+              much more.
+            </p>
+          </div>
+
+          <form action="" className="newsletter__subscribe">
+            <button className="button">SUBSCRIBE</button>
+          </form>
+        </div>
+      </section>
+      <section className="newsletter section container pd-1">
+        <div className="newsletter__bg grid">
+          <h2 className="newsletter__title">Report CyberBulling</h2>
+          <p className="newsletter__description">
+            Don't miss out on your discounts. Subscribe to our email newsletter
+            to get the best offers, discounts, coupons, gifts and much more.
+          </p>
+          <button className="button">SUBSCRIBE</button>
+        </div>
+      </section>
+      <StorySection />
+    </div>
+  );
+}
+
+export default HomePage

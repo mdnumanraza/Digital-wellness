@@ -1,5 +1,6 @@
 import { useAuthContext } from "../hooks/useAuthContext"
 import { usePostsContext } from '../hooks/usePostContext'
+import HomePage from "./Homepage"
 
 
 const Home = () => {
@@ -12,7 +13,8 @@ const Home = () => {
 
   return (
     <div className="home">
-      hello {user.username}
+      Hello {user.username}
+      <HomePage/>
     </div>
   )
 }
