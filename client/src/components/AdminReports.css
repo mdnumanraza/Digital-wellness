@@ -53,7 +53,7 @@ ul {
 }
 
 
-.description {
-    width: 100%;
+.description p{
+    width: 200px;
 }
 

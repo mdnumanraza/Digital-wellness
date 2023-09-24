@@ -60,13 +60,19 @@ const handleDelete = async (id) => {
         {rep && rep.map((rep) => (
           
           <div className='li' key={rep.id}>
+
             <div className="message-header">
               <span className="username">{rep.rname}</span>
             </div>
+
             <img src={rep.ss} alt="ss" width='300px' />
-            <p className={`description`}>
+            <div className={`description`}>
+              {/* <p> */}
+
               {rep.descrip}
-            </p>
+              {/* </p> */}
+            </div>
+
             <button className="btn" onClick={() => handleDelete(rep._id)}>Delete</button>
             <p className={`description`}>
               {rep.email}
