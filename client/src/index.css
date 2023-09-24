@@ -129,8 +129,8 @@ form.signup, form.login {
 
 img {
     height: 200px;
-    border-radius: 50%;
-    border: 3px solid #d0d0d0;
+    /* border-radius: 50%; */
+    /* border: 3px solid #d0d0d0; */
 }
 
 /* AdminDashboard.css */
@@ -1635,4 +1635,15 @@ th {
         width: 94%;
         border-radius: 0 0 16px 16px;
     }
+}
+
+.community{
+    
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.community .workouts{
+    max-width: 500px;
 }

@@ -5,7 +5,8 @@ import 'firebase/compat/storage'
 import addNotification from 'react-push-notification'
 
 const Report = () => {
-    const apiurl = 'http://localhost:8002'
+    // const apiurl = 'http://localhost:8002'
+    const apiurl = 'https://digital-wellness-brown.vercel.app'
 
     const { user } = useAuthContext()
 

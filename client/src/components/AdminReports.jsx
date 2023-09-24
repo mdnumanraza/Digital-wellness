@@ -5,7 +5,8 @@ import './AdminReports.css'
 
 const Reports = () => {
   const [rep , setRep] = useState([])
-  const apiurl = 'http://localhost:8002'
+  // const apiurl = 'http://localhost:8002'
+  const apiurl = 'https://digital-wellness-brown.vercel.app'
 
   const fetchreports = async()=>{
     try{

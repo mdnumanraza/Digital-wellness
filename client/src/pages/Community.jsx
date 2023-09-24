@@ -8,7 +8,8 @@ import { usePostsContext } from '../hooks/usePostContext'
 
 const Community = () => {
 
-    const apiurl = 'http://localhost:8002'
+    // const apiurl = 'http://localhost:8002'
+    const apiurl = 'https://digital-wellness-brown.vercel.app'
     const {posts, dispatch} = usePostsContext()
     const {user} = useAuthContext()
 
@@ -30,7 +31,7 @@ const Community = () => {
   }, [dispatch, user])
   return (
     <div>
-       <div className="home">
+       <div className="community">
 
         <div className="postform">
         <PostForm />

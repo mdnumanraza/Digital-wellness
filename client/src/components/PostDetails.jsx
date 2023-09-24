@@ -6,7 +6,8 @@ import './PostDetails.css'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const PostDetails = ({ posts }) => {
-  const apiurl = 'http://localhost:8002'
+  // const apiurl = 'http://localhost:8002'
+  const apiurl = 'https://digital-wellness-brown.vercel.app'
   const { dispatch } = usePostsContext()
   const { user } = useAuthContext()
 

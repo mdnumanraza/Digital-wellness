@@ -8,6 +8,8 @@ import { FiAlignJustify } from "react-icons/fi";
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
+  const username = 'numan'
+
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
@@ -58,11 +60,11 @@ const Navbar = () => {
               <NavLink to="/report">Report Cyber bullying</NavLink>
             </li>}
 
-           {/* {user.username==='numan' &&  */}
+           {/* {user && 
            <li>
               <NavLink to="/admin">Admin Dashboard</NavLink>
             </li>
-            {/* } */}
+           }  */}
 
           <div style={{color:'white'}}>
             {/* {user.username} */}

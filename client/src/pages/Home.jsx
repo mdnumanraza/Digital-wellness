@@ -3,7 +3,8 @@ import { usePostsContext } from '../hooks/usePostContext'
 
 
 const Home = () => {
-  const apiurl = 'http://localhost:8002'
+  // const apiurl = 'http://localhost:8002'
+  const apiurl = 'https://digital-wellness-brown.vercel.app'
   const {posts, dispatch} = usePostsContext()
   const {user} = useAuthContext()
 

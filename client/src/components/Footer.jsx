@@ -34,6 +34,12 @@ function Footer() {
             <li>
               <Link to="/report">Report Cyber Bullying</Link>
             </li>
+            <li>
+              {
+                  user.username ==='numan' &&
+              <Link to="/admin">Admin Dashboard</Link>
+              }
+            </li>
           </ul>
         </div>
         <div className="footer-social">

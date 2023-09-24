@@ -7,7 +7,8 @@ import './PostForm.css'
 import addNotification from 'react-push-notification'
 
 const PostForm = () => {
-  const apiurl = 'http://localhost:8002'
+  // const apiurl = 'http://localhost:8002'
+  const apiurl = 'https://digital-wellness-brown.vercel.app'
   const { dispatch } = usePostsContext()
   const { user } = useAuthContext()
 
@@ -96,6 +97,7 @@ const PostForm = () => {
 
       <label className="white">Title:</label>
       <input 
+      className="tinput"
         type="text"
         onChange={
             (e) => setTitle(e.target.value)

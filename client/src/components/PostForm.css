@@ -2,6 +2,10 @@
     color: White;
 }
 
-.white{
+/* .white{
     color: white;
-} */
+} */ 
+
+.tinput{
+    max-width: 500px;
+}
