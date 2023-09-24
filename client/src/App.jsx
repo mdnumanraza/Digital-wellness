@@ -11,6 +11,7 @@ import Community from './pages/Community';
 import Report from './pages/Report';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/AdminDashboard';
+import Consult from './pages/Consult';
 
 function App() {
 
@@ -56,6 +57,12 @@ function App() {
               element={
                 // admin==='numan' ? 
                user ? <AdminDashboard/> : <Navigate to="/login" />} 
+            />
+            <Route 
+              path="/consult" 
+              element={
+                
+               user ? <Consult/> : <Navigate to="/login" />} 
             />
 
           </Routes>

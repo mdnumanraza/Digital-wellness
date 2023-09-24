@@ -57,6 +57,10 @@ const Navbar = () => {
             </li>}
 
            {user && <li>
+              <NavLink to="/consult">Consult a Psychiatrist</NavLink>
+            </li>}
+
+           {user && <li>
               <NavLink to="/report">Report Cyber bullying</NavLink>
             </li>}
 

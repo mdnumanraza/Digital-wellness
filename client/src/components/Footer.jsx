@@ -29,7 +29,7 @@ function Footer() {
               <Link to="/profile">Profile</Link>
             </li>
             <li>
-              <a href="https://www.practo.com/bangalore/online-psychiatrist-consultation" target="_blank">Consult a Psychiatrist</a>
+              <Link to='/consult'>Consult a Psychiatrist</Link>
             </li>
             <li>
               <Link to="/report">Report Cyber Bullying</Link>
