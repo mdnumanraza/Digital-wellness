@@ -1586,7 +1586,7 @@ th {
 .profile {
     max-width: 400px;
     border-radius: 16px;
-    height: 200px;
+    /* height: 200px; */
     display: flex;
     margin: 40px auto;
     box-shadow: 10px 10px 10px #9a9a9a;
