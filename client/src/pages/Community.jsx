@@ -31,7 +31,7 @@ const Community = () => {
   }, [dispatch, user])
   return (
     <div>
-       <div className="community">
+       <div className="community" >
 
         <div className="postform">
         <PostForm />

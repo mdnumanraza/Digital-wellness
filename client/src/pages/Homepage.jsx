@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HomeSection from "../components/HomeSection"
 import StorySection from "../components/StorySection"
 // import './Home.css'
@@ -30,7 +31,9 @@ const HomePage = () => {
             Don't miss out on your discounts. Subscribe to our email newsletter
             to get the best offers, discounts, coupons, gifts and much more.
           </p>
-          <button className="button">SUBSCRIBE</button>
+          <Link to='/report'>
+          <button className="button">Report</button>
+          </Link>
         </div>
       </section>
       <StorySection />

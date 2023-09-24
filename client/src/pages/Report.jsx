@@ -2,14 +2,16 @@ import React ,{useState} from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/storage'
-// import addNotification from 'react-push-notification'
+import addNotification from 'react-push-notification'
 
 const Report = () => {
     // const apiurl = 'http://localhost:8002'
     const apiurl = 'https://digital-wellness-brown.vercel.app'
+    const loadgif = 'https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif'
 
     const { user } = useAuthContext()
 
+    // const [load, setLoad] = useState("Submit");
     const [rname, setRname] = useState("");
     const [descrip, setDescrip] = useState("");
     const [ss, setSs] = useState("");
@@ -27,6 +29,7 @@ const Report = () => {
             .then((downloadURL)=>{
               console.log(downloadURL);
               setSs(downloadURL);
+              // setLoad('Submit')
               
             })
           })
@@ -63,13 +66,13 @@ const Report = () => {
           setEmptyFields(json.emptyFields)
         }
         if (response.ok) {
-          // addNotification({
-          //   title:`new report from ${rname}`,
-          //   message:descrip,
-          //   duration:5000,
-          //   native:true,
-          //   onClick: ()=>{console.log('Notification')}        
-          // })
+          addNotification({
+            title:`new report from ${rname}`,
+            message:descrip,
+            duration:5000,
+            native:true,
+            onClick: ()=>{console.log('Notification')}        
+          })
           setRname('')
           setDescrip('')
           setSs('')
@@ -91,16 +94,11 @@ const Report = () => {
         onChange={(e) => setRname(e.target.value)}
         value={rname}
       />
-      <label>Email address:</label>
-      <input
-        type="email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-      />
-      <div className=" flex justify-center py-4">
+       <div className=" flex justify-center py-4">
         <label htmlFor="profile">
           Screen Shots:
           <input
+            
             type="file"
             id="profile"
             onChange={handleupload}
@@ -108,14 +106,23 @@ const Report = () => {
           />
         </label>
       </div>
-      <label>Description:</label>
+      <label>Email address:</label>
+      <input
+        type="email"
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
+      />
+     
+      <label>Report:</label>
       <input
         type="text"
         onChange={(e) => setDescrip(e.target.value)}
         value={descrip}
       />
 
-      <button>Submit</button>
+      <button>
+      Submit
+      </button>
     </form>
     </div>
   )

@@ -1,6 +1,7 @@
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import React, { useState,useEffect } from "react";
 import './AdminReports.css'
+import addNotification from 'react-push-notification';
 // import { ToastContainer, toast } from 'react-toastify';
 
 const Reports = () => {
@@ -39,7 +40,13 @@ const handleDelete = async (id) => {
     if (response.ok) {
       alert(`successfully Reviewed`);
         // toast.warn("Task deleted successfully");
-      
+        addNotification({
+          title:`Your issue resolved`,
+          message:'Go to Digital wellness website for more',
+          duration:5000,
+          native:true,
+          onClick: ()=>{console.log('Notification')}        
+        })
       // Remove the deleted todo from the state
       setRep(
         (prevRep) => {
@@ -63,20 +70,23 @@ const handleDelete = async (id) => {
           <div className='li' key={rep.id}>
 
             <div className="message-header">
-              <span className="username">{rep.rname}</span>
+             
             </div>
-
+            ScreenShot : 
             <img src={rep.ss} alt="ss" width='300px' />
             <div className={`description`}>
               {/* <p> */}
 
-              {rep.descrip}
+             <strong> Report :</strong> {rep.descrip}
               {/* </p> */}
             </div>
 
-            <button className="btn" onClick={() => handleDelete(rep._id)}>Delete</button>
+            <button className="btn" onClick={() => handleDelete(rep._id)}>Resolved</button>
             <p className={`description`}>
               {rep.email}
+              <br />
+              Victim name :
+              <span className="username">{rep.rname}</span>
             </p>
           </div>
         ))}

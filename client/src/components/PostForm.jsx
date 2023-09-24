@@ -4,7 +4,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/storage'
 import './PostForm.css'
-// import addNotification from 'react-push-notification'
+import addNotification from 'react-push-notification'
 
 const PostForm = () => {
   // const apiurl = 'http://localhost:8002'
@@ -73,13 +73,13 @@ const PostForm = () => {
       setEmptyFields(json.emptyFields)
     }
     if (response.ok) {
-      // addNotification({
-      //   title:`new post from ${uname}`,
-      //   message:title,
-      //   duration:5000,
-      //   native:true,
-      //   onClick: ()=>{console.log('Notification')}        
-      // })
+      addNotification({
+        title:`new post from ${uname}`,
+        message:title,
+        duration:5000,
+        native:true,
+        onClick: ()=>{console.log('Notification')}        
+      })
       setTitle('')
       setDescription('')
       setImg('')
@@ -105,6 +105,16 @@ const PostForm = () => {
         value={title}
         
       />
+       <label className="white">
+          Image:
+          <input
+          style={{maxWidth:'200px'}}
+            type="file"
+            name="image"  
+            text='muted' 
+            onChange={handleupload}
+          />
+        </label>
 
       <label className="white">Description:</label>
       <textarea
@@ -115,16 +125,8 @@ const PostForm = () => {
         
       />
 
-        <label className="white">
-          Add Image:
-          <input
-            type="file"
-            name="image"  
-            text='muted' 
-            onChange={handleupload}
-          />
-        </label>
-
+       
+<br />
       <button>Add Post</button>
       {error && <div className="error">{error}</div>}
     </form>
