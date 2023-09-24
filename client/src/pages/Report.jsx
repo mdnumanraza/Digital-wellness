@@ -2,7 +2,7 @@ import React ,{useState} from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/storage'
-import addNotification from 'react-push-notification'
+// import addNotification from 'react-push-notification'
 
 const Report = () => {
     // const apiurl = 'http://localhost:8002'
@@ -66,13 +66,14 @@ const Report = () => {
           setEmptyFields(json.emptyFields)
         }
         if (response.ok) {
-          addNotification({
-            title:`new report from ${rname}`,
-            message:descrip,
-            duration:5000,
-            native:true,
-            onClick: ()=>{console.log('Notification')}        
-          })
+
+          // addNotification({
+          //   title:`new report from ${rname}`,
+          //   message:descrip,
+          //   duration:5000,
+          //   native:true,
+          //   onClick: ()=>{console.log('Notification')}        
+          // })
           setRname('')
           setDescrip('')
           setSs('')

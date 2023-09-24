@@ -1,7 +1,7 @@
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import React, { useState,useEffect } from "react";
 import './AdminReports.css'
-import addNotification from 'react-push-notification';
+// import addNotification from 'react-push-notification';
 // import { ToastContainer, toast } from 'react-toastify';
 
 const Reports = () => {
@@ -40,13 +40,13 @@ const handleDelete = async (id) => {
     if (response.ok) {
       alert(`successfully Reviewed`);
         // toast.warn("Task deleted successfully");
-        addNotification({
-          title:`Your issue resolved`,
-          message:'Go to Digital wellness website for more',
-          duration:5000,
-          native:true,
-          onClick: ()=>{console.log('Notification')}        
-        })
+        // addNotification({
+        //   title:`Your issue resolved`,
+        //   message:'Go to Digital wellness website for more',
+        //   duration:5000,
+        //   native:true,
+        //   onClick: ()=>{console.log('Notification')}        
+        // })
       // Remove the deleted todo from the state
       setRep(
         (prevRep) => {
