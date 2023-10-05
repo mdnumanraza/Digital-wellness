@@ -700,7 +700,7 @@ section{
     font-size: var(--h2-font-size);
     /* font-weight: var(--font-medium); */
     color: black;
-    margin-bottom: var(--mb-3);
+    margin-bottom: 10px;
     font-weight: 650 ;
 }
 
@@ -1260,7 +1260,8 @@ section{
 
     
     .herocontainer{
-        padding: 5px;
+        /* padding: 5px; */
+        padding-bottom: 5px;
     }
 
     .home__img-bg {
@@ -1301,7 +1302,8 @@ section{
     }
 
     .herocontainer{
-        padding: 5px;
+        /* padding: 5px; */
+        padding-bottom: 5px;
     }
 
     .featured__container {
@@ -1322,7 +1324,9 @@ section{
     }
 
     .herocontainer{
-        padding: 5px;
+        /* padding: 5px; */
+        padding-bottom: 5px;
+
     }
 
     .cart {
@@ -1626,7 +1630,7 @@ section{
 
 
 .herocontainer{
-    padding-bottom: 40px;
+    padding-bottom: 5px;
     background: #002b1c71;
     background-image: url('https://media.tenor.com/W7_V2Q__05sAAAAC/digital-healthcare-market.gif');
     background-repeat: repeat-x;
