@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 const HomeSection = () => {
   return (
-    <section className="" id="home">
-      <div className="home__container container grid">
-        <div className="home__img-bg">
+    <section className="herocontainer" id="home">
+      <div className="home__container grid">
+        {/* <div className="home__img-bg">
           <img height='800px' src="https://www.beyondblue.org.au/images/default-source/1.homepage/featured-content/nicole-personalbest-720x540_v2.tmb-hero.png?Culture=en&sfvrsn=6db15da8_1" alt="" />
-        </div>
+        </div> */}
 
-        <div className="home__social">
+        {/* <div className="home__social">
           <a
             href="https://www.facebook.com/"
             target="_blank"
@@ -32,7 +32,7 @@ const HomeSection = () => {
           >
             Instagram
           </a>
-        </div>
+        </div> */}
 
         <div className="home__data">
           <h1 className="home__title">
@@ -44,7 +44,7 @@ const HomeSection = () => {
           <span className="home__price">Digital Wellness</span>
 
           <div className="home__btns">
-            <Link to='/community' className="button button--gray button--small">
+            <Link to='/community' className="button  button--small">
               Discover
             </Link>
 

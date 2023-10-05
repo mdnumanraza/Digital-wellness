@@ -64,9 +64,10 @@ const Report = () => {
         if (!response.ok) {
           setError(json.error)
           setEmptyFields(json.emptyFields)
+          alert('Error try again')
         }
         if (response.ok) {
-
+          alert('Reported successfully');
           // addNotification({
           //   title:`new report from ${rname}`,
           //   message:descrip,
@@ -79,7 +80,7 @@ const Report = () => {
           setSs('')
           setError(null)
           setEmptyFields([])
-          alert('Reported successfully')
+          
         //   dispatch({type: 'CREATE_POST', payload: json})
         }
       }

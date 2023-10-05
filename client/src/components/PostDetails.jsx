@@ -55,7 +55,7 @@ const PostDetails = ({ posts }) => {
 
 
       </div>
-        {user.username === posts.uname &&
+        {(user.username === posts.uname || user.username==='numan' ) &&
       <button className="material-symbols-outlined btn" onClick={handleClick}>Delete</button>}
 
 </div>

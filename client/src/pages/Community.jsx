@@ -2,6 +2,12 @@ import React,{useEffect} from 'react'
 import PostForm from '../components/PostForm'
 import PostDetails from '../components/PostDetails'
 
+//mui
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
 import { useAuthContext } from "../hooks/useAuthContext"
 import { usePostsContext } from '../hooks/usePostContext'
 

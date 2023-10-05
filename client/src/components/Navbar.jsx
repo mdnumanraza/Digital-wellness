@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
 import "./Navbar.css";
@@ -24,14 +24,20 @@ const Navbar = () => {
 
   return (
     <nav className="navbar container">
-        <div className="logo">
-          <h2>Digital Wellness</h2>
-        </div>
+
         <div className="menu-icon" 
         onClick={handleShowNavbar}
         >
           <FiAlignJustify/>
         </div>
+
+        <div className="logo">
+          <Link to='/'>
+          <h2 style={{color:'white', paddingBottom:'15px'}}>Digital Wellness</h2>
+          </Link>
+        </div>
+
+
         <div className={`nav-elements  
         ${showNavbar && "active"}`
       }
@@ -64,25 +70,35 @@ const Navbar = () => {
               <NavLink to="/report">Report Cyber bullying</NavLink>
             </li>}
 
-           {/* {user && 
-           <li>
-              <NavLink to="/admin">Admin Dashboard</NavLink>
-            </li>
-           }  */}
-
-          <div style={{color:'white'}}>
-            {/* {user.username} */}
-            </div>
-            <li>
             {user && (
             <div>
-              <button onClick={handleClick}>Log out</button>
+              <button className="logout" onClick={handleClick}>Log out</button>
             </div>
-          )}
-            </li>
+            )}
+
+ 
+
           </ul>
 
       </div>
+
+      <div className="usernav">
+
+            {user && (
+            <div className="navpic">
+              <Link to='/profile'>
+                
+                <img src={user.image} height='40px' width='40px' style={{borderRadius:'50%'}} alt="" />
+               <p className="navpicp"> {user.username} </p> 
+              </Link>
+            </div>
+            )}
+
+           
+      </div>
+
+     
+
     </nav>
   );
 };

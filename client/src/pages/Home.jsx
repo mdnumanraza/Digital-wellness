@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      Hello {user.username}
+   
       <HomePage/>
     </div>
   )
