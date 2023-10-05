@@ -1,6 +1,12 @@
 input[type="file"] {
     display: none;
   }
+
+input[type="text"]:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #1aac83;
+  }
   ul {
     list-style-type: none;
   }
@@ -17,6 +23,7 @@ input[type="file"] {
   
   .widget-post {
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 500px;
     min-height: 100px;
     height: auto;
@@ -158,6 +165,7 @@ input[type="file"] {
   @media (max-width: 768px) {
      .widget-post {
         margin-top: 20px;
+        margin-bottom: 20px !important;
         width: 350px;
         min-height: 100px;
         height: auto;

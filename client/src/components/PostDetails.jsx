@@ -1,6 +1,8 @@
 import { usePostsContext } from '../hooks/usePostContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 import './PostDetails.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
@@ -31,12 +33,13 @@ const PostDetails = ({ posts }) => {
 
     if (response.ok) {
       dispatch({type: 'DELETE_POST', payload: json})
+      toast.success("Successfully deleted");
     }
   }
 
   return (
     <div className="workout-details">
-
+      <ToastContainer/>
 
 <div className="card">
 

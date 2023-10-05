@@ -85,7 +85,7 @@ const PostForm = () => {
   }
 
   return (
-    <form className="create formpost" onSubmit={handleSubmit}>
+    <div className="create formpost" >
      
       {/* <h3>Add a New Post</h3> */}
         <Addpost/>
@@ -124,7 +124,7 @@ const PostForm = () => {
 <br />
       <button>Add Post</button>
       {error && <div className="error">{error}</div>} */}
-    </form>
+    </div>
   )
 }
 
