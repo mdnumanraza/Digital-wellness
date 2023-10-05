@@ -87,7 +87,7 @@ const PostForm = () => {
   return (
     <form className="create formpost" onSubmit={handleSubmit}>
      
-      <h3>Add a New Post</h3>
+      {/* <h3>Add a New Post</h3> */}
         <Addpost/>
 
       {/* <label className="white">Title:</label>
