@@ -1,10 +1,12 @@
 import React from 'react'
 import AdminReports from '../components/AdminReports'
+import Users from '../components/AdminDashboard/Users'
 
 const AdminDashboard = () => {
   return (
-    <div>
+    <div className='AdminDashboard'>
       <AdminReports/>
+      <Users/>
     </div>
   )
 }

@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './Consult.css'
 
 const Consult = () => {
+
+  const [text,setText] = useState('');
+
   const url = 'https://source.unsplash.com/600x400/?doctor'
   const psychiatristsInBengaluru = [
     {
@@ -79,6 +83,7 @@ const Consult = () => {
   return (
     <div className="consult">
       <h2>Consult  Psychiatrist</h2>
+
       <div className="docs">
         {/*
           {psychiatristsInBengaluru.map((psychiatrist, index) => (

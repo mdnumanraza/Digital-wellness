@@ -118,6 +118,25 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+const deleteUser = async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    await User.findByIdAndDelete(userId); // Delete the user by ID
+
+    // Optionally, you can send a success message or status
+    res.status(204).json(); // Respond with no content (204 status code)
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
 
 
-module.exports = { signupUser, loginUser  , getUser, updateUser,getAllUsers ,updateCoin }
+
+module.exports = { signupUser, loginUser  , getUser, updateUser,getAllUsers ,updateCoin, deleteUser }
