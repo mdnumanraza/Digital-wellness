@@ -4,8 +4,12 @@ import { useSignup } from "../hooks/useSignup"
 // import { FaGoogle } from "react-icons/fa";
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/storage'
+import uploadimg from '../assets/uploadimg.png'
 
 const Signup = () => {
+  const loadicon = 'https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif'
+  const [load, setLoad] = useState(false);
+  
   const [image, setImg]= useState('');
   const [username, setUsername] = useState("");
   const [desc, setDesc] = useState("");
@@ -27,6 +31,7 @@ const Signup = () => {
         .then((downloadURL)=>{
           console.log(downloadURL);
           setImg(downloadURL);
+          setLoad(false);
           
         })
       })
@@ -61,13 +66,18 @@ const Signup = () => {
      
       <div className=" flex justify-center py-4">
         <label htmlFor="profile">
-          Pofile Image:
+          Add Pofile Image: <br />
+          <img className='uploadimg' src={uploadimg} alt="upload image" width='40px' />
+          { image &&
+          <img className='uploadimg' src={image} alt="upload image" width='60px' />
+          }
           <input
             type="file"
             name="image"  
             text='muted' 
             id="profile"
             onChange={handleupload}
+            onClick={()=>{setLoad(true)}}
             
           />
         </label>
@@ -75,8 +85,12 @@ const Signup = () => {
         
       </div>
       <label>Description:</label>
-      <input
+      
+      <textarea
         type="text"
+        rows='6'
+        cols='40'
+        placeholder="Write about your self..."
         value={desc}
         onChange={(e) => setDesc(e.target.value)}
       />
@@ -88,7 +102,10 @@ const Signup = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button disabled={isLoading}>Sign up</button>
+      <button disabled={load}>
+      {load ? <img src={loadicon} height='30px' width='30px' alt="" /> : <div>Sign up </div> }
+        
+        </button>
       {error && <div className="error">{error}</div>}
 
       <p>

@@ -24,6 +24,20 @@ header {
     background: #fff;
 }
 
+textarea:focus{
+    /* border: none; */
+    outline: none;
+}
+textarea{
+    padding: 10px;
+}
+
+.uploadimg{
+    border-radius: 0 !important;
+    display: inline;
+
+}
+
 header .container {
     max-width: 1400px;
     margin: 0 auto;
