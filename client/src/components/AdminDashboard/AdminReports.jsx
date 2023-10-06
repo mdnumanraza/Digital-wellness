@@ -57,40 +57,63 @@ const handleDelete = async (id) => {
     fetchreports();
   } catch (error) {
     console.log(error);
-  }
-};
+  };
+}
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const limit = 100;
+
 
   return (
     <div className="message-list">
        {/* <ToastContainer /> */}
       <h2>Report List</h2>
-      <ul>
+      <div className='reports'>
         {rep && rep.map((rep) => (
           
-          <div className='li' key={rep.id}>
+          <div className='li' key={rep._id}>
 
-            <div className="message-header">
-             
-            </div>
-            ScreenShot : 
-            <img src={rep.ss} alt="ss" width='300px' />
-            <div className={`description`}>
-              {/* <p> */}
-
-             <strong> Report :</strong> {rep.descrip}
-              {/* </p> */}
-            </div>
-
-            <button className="btn" onClick={() => handleDelete(rep._id)}>Resolved</button>
-            <p className={`description`}>
-              {rep.email}
+          <p className={`description`}>
+             <span  className='bold'> Email: </span>  {rep.email}
               <br />
-              Victim name :
+              <span className='bold'> Victim Name: </span>
               <span className="username">{rep.rname}</span>
             </p>
+
+            <div className={`description`}>
+            <span className='bold'> Description: </span>
+
+
+            { rep.descrip.length <= limit || isExpanded ? (
+              <p>{rep.descrip}</p>
+             ) : (
+              <div>
+             
+                <p>{rep.descrip.slice(0, limit)}...</p>
+
+                
+              </div>
+           )}
+            { rep.descrip.length>=limit &&
+           <span onClick={toggleExpand} className='showmore'>
+                 {isExpanded  ? 'Show Less' : 'Show More'}
+                </span>}
+
+             {/* <p className='rdesc'>{rep.descrip} </p>  */}
+            </div>
+
+            <img src={rep.ss} alt="ss"  />
+            <span className='bold'> Screen Shot: </span>
+
+            <button className="btn" onClick={() => handleDelete(rep._id)}>Resolved</button>
+           
           </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

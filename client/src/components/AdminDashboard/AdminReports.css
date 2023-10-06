@@ -1,0 +1,78 @@
+/* MessageList.css */
+
+.message-list {
+    /* max-width: fit-content; */
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color:#fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.message-list .reports{
+    /* background: #ffff; */
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+
+.message-list .reports .li {
+    margin: 5px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    width: 300px;
+    height: auto;
+}
+
+.message-list .reports .li img{
+    border: none !important;
+    border-radius: 2px !important;
+    width: 150px;
+    /* height: 150px; */
+    margin-top: 10px;
+    
+}
+
+.bold{
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.showmore{
+    cursor: pointer;
+    color: gray;
+    font-size: 0.8rem;
+}
+ 
+.message-header {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    
+}
