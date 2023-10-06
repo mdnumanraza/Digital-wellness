@@ -8,6 +8,7 @@ import uploadimg from '../assets/uploadimg.png'
 
 const Signup = () => {
   const loadicon = 'https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif'
+  const avatar = 'https://firebasestorage.googleapis.com/v0/b/add-images-b4898.appspot.com/o/avatar.jpg?alt=media&token=ad8d7691-bfbd-4ae6-bb7a-5559f0cf363a'
   const [load, setLoad] = useState(false);
   
   const [image, setImg]= useState('');
@@ -30,7 +31,7 @@ const Signup = () => {
         snapshot.ref.getDownloadURL()
         .then((downloadURL)=>{
           console.log(downloadURL);
-          setImg(downloadURL);
+          setImg(downloadURL );
           setLoad(false);
           
         })
@@ -43,7 +44,7 @@ const Signup = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signup(username,email, password, image, desc)
+    await signup(username,email, password, image||avatar, desc)
   };
 
   return (

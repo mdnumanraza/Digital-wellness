@@ -13,7 +13,7 @@
 }
 
 body {
-    background: #c0cad3;
+    background: #bdc1f5;
     margin: 0;
     border: 0;
     font-family: "Poppins";
@@ -36,6 +36,10 @@ textarea{
     border-radius: 0 !important;
     display: inline;
 
+}
+
+label{
+    cursor: pointer;
 }
 
 header .container {
