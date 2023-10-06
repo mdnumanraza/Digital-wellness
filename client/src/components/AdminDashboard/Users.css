@@ -18,9 +18,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .user-avatar {
-    width: 80px;
-    height: 80px;
+  .user-card .user-avatar {
+    width: 100px ;
+    height: 100px ;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;

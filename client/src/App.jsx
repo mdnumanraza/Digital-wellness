@@ -12,6 +12,7 @@ import Report from './pages/Report';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/AdminDashboard';
 import Consult from './pages/Consult';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
 
@@ -52,18 +53,22 @@ function App() {
               path="/report" 
               element={user ? <Report/> : <Navigate to="/login" />} 
             />
+            
             <Route 
               path="/admin" 
               element={
                 // admin==='numan' ? 
                user ? <AdminDashboard/> : <Navigate to="/login" />} 
             />
+
             <Route 
               path="/consult" 
               element={
                 
                user ? <Consult/> : <Navigate to="/login" />} 
             />
+
+            <Route path='*' element={<PageNotFound/>}/>
 
           </Routes>
         </div>
