@@ -1,6 +1,5 @@
 import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { useAuthContext } from './hooks/useAuthContext'
 
 import Login from './pages/Login'
 import Signup from "./pages/Signup";
@@ -13,11 +12,11 @@ import Footer from './components/Footer';
 import AdminDashboard from './pages/AdminDashboard';
 import Consult from './pages/Consult';
 import PageNotFound from './pages/PageNotFound';
+import { useAuthContext } from './hooks/useAuthContext'
 
 function App() {
 
   const { user } = useAuthContext()
-  // const admin = user.username || 0;
 
   return (
     <div className="App">
@@ -27,45 +26,46 @@ function App() {
           <Routes>
 
             <Route 
-              path="/" 
-              element={user ? <Home /> : <Navigate to="/login" />} 
+             exact path="/" 
+              // element={user ? <Home /> : <Navigate to="/login" />} 
+              element={user ? <Home /> : <Login />} 
             />
 
             <Route 
               path="/login" 
-              element={!user ? <Login /> : <Navigate to="/" />} 
+              element={!user ? <Login /> : <Home/>} 
             />
 
             <Route 
               path="/signup" 
-              element={!user ? <Signup /> : <Navigate to="/" />} 
+              element={!user ? <Signup /> : <Home />} 
             />
 
             <Route 
-              path="/profile" 
-              element={user ? <ProfilePage/> : <Navigate to="/login" />} 
+              exact path="/profile" 
+              element={user ? <ProfilePage/> : <Login />} 
             />
             <Route 
               path="/community" 
-              element={user ? <Community/> : <Navigate to="/login" />} 
+              // element={user ? <Community/> : <Navigate to="/login" />} 
+              element={user ? <Community/> : <Login />} 
             />
             <Route 
               path="/report" 
-              element={user ? <Report/> : <Navigate to="/login" />} 
+              element={user ? <Report/> : <Login />} 
             />
             
-            <Route 
+            { (user && user.username==='numan' ) &&
+              <Route 
               path="/admin" 
-              element={
-                // admin==='numan' ? 
-               user ? <AdminDashboard/> : <Navigate to="/login" />} 
-            />
+              element={<AdminDashboard/> } 
+            />}
 
             <Route 
               path="/consult" 
               element={
                 
-               user ? <Consult/> : <Navigate to="/login" />} 
+               user ? <Consult/> : <Login />} 
             />
 
             <Route path='*' element={<PageNotFound/>}/>
