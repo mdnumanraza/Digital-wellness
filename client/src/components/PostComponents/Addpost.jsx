@@ -29,6 +29,7 @@ const Addpost = () => {
   const profile = user.image;
 
   const handleupload = async(e)=>{
+    setLoad(true)
     const selectedFile = e.target.files[0];
     if(selectedFile){
       const storageRef =  firebase.storage().ref()
@@ -40,16 +41,17 @@ const Addpost = () => {
         .then((downloadURL)=>{
           // setName(user.username);
           // setProfile(user.image);
-          console.log(downloadURL);
+          // console.log(downloadURL);
           setImg(downloadURL);
           setLoad(false);
-          console.log({uname,profile})
+          // console.log({uname,profile})
 
           
         })
       })
     }else{
       toast.error("Please select image to upload")
+      setLoad(false);
      
     }
  }
@@ -149,7 +151,7 @@ const Addpost = () => {
         id="upload-image" 
         accept="image/*" 
         onChange={handleupload}
-        onClick={()=>{setLoad(true)}}
+        // onClick={()=>{setLoad(true)}}
         />
 
       </div>

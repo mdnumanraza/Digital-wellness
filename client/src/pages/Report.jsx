@@ -2,6 +2,7 @@ import React ,{useState} from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/storage'
+import uploadimg from '../assets/uploadimg.png'
 // import addNotification from 'react-push-notification'
 
 const Report = () => {
@@ -99,6 +100,7 @@ const Report = () => {
        <div className=" flex justify-center py-4">
         <label htmlFor="profile">
           Screen Shots:
+          <img src={uploadimg} width={'40px'}  alt="" />
           <input
             
             type="file"
