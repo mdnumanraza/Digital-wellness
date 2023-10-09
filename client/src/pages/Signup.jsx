@@ -21,7 +21,10 @@ const Signup = () => {
 
 
   const handleupload = async(e)=>{
+    setLoad(true);
     const selectedFile = e.target.files[0];
+
+
     if(selectedFile){
       const storageRef =  firebase.storage().ref()
       const fileRef = storageRef.child(selectedFile.name)
@@ -30,15 +33,15 @@ const Signup = () => {
       .then((snapshot)=>{
         snapshot.ref.getDownloadURL()
         .then((downloadURL)=>{
-          console.log(downloadURL);
+          // console.log(downloadURL);
           setImg(downloadURL );
           setLoad(false);
           
         })
       })
     }else{
-      toast.error("Please select image to upload")
-     
+      console.log("Please select image to upload")
+      setLoad(false);
     }
  }
   
@@ -75,10 +78,9 @@ const Signup = () => {
           <input
             type="file"
             name="image"  
-            text='muted' 
             id="profile"
             onChange={handleupload}
-            onClick={()=>{setLoad(true)}}
+            // onClick={()=>{setLoad(true)}}
             
           />
         </label>
