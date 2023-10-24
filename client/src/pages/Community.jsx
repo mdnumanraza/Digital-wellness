@@ -12,6 +12,7 @@ import { useAuthContext } from "../hooks/useAuthContext"
 import { usePostsContext } from '../hooks/usePostContext'
 
 
+
 const Community = () => {
 
     // const apiurl = 'http://localhost:8002'
@@ -19,6 +20,7 @@ const Community = () => {
     const {posts, dispatch} = usePostsContext()
     const {user} = useAuthContext()
 
+ 
      useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch(apiurl + '/api/posts', {
@@ -27,6 +29,8 @@ const Community = () => {
       const json = await response.json()
 
       if (response.ok) {
+          
+        
         dispatch({type: 'SET_POSTS', payload: json})
       }
     }
@@ -35,6 +39,7 @@ const Community = () => {
       fetchPosts()
     }
   }, [dispatch, user])
+
   return (
     <div>
        <div className="community" >

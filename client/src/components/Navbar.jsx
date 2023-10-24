@@ -6,24 +6,34 @@ import "./Navbar.css";
 import { FiAlignJustify } from "react-icons/fi";
 
 const Navbar = () => {
+  
+    const { logout } = useLogout()
+    const { user } = useAuthContext()
   const [showNavbar, setShowNavbar] = useState(false);
 
-  const username = 'numan'
+  const [coins, setCoins] = useState();
+
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const { logout } = useLogout()
-  const { user } = useAuthContext()
+  // const coinsnum = parseInt(user.coin || 0);
+  // if(coinsnum>=1000){
+  //   const a = coinsnum/1000;
+  //   a.toFixed(2);
+  //   setCoins(a.toString());
+  // }
 
   const handleClick = () => {
     logout()
   }
 
 
+
+
   return (
-    <nav className="navbar container">
+    <nav className="navbar container" onClick={handleShowNavbar}>
 
         <div className="menu-icon" 
         onClick={handleShowNavbar}
@@ -86,9 +96,14 @@ const Navbar = () => {
 
             {user && (
             <div className="navpic">
-              <Link to='/profile'>
-                
+              <Link to='/profile' style={{textDecoration:'none'}}>
                 <img src={user.image} height='40px' width='40px' style={{borderRadius:'50%'}} alt="" />
+                <div className="coin">
+                  {
+                    user.coin>='1000'? parseInt(user.coin)/1000+'K':user.coin
+                  }
+                 
+                </div>
                <p className="navpicp"> {user.username} </p> 
               </Link>
             </div>

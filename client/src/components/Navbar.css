@@ -102,3 +102,22 @@
         margin-top: 22px;
     }
 } */
+
+.coin{
+    background-color: rgb(236, 126, 0);
+    border-radius: 50%;
+    display: block;
+    /* padding: 2px; */
+    margin: auto;
+    text-align: center;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 0.55rem;
+    font-weight: 550;
+    text-decoration: none;
+    color: rgb(12, 4, 122);
+    position: absolute;
+    right: 19px;
+    bottom: 26px;
+}

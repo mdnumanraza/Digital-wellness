@@ -29,7 +29,7 @@ const userSchema = new Schema({
       required:false
   },
   coin: {
-      type:Number,
+      type:String,
       required:false
   }
 })

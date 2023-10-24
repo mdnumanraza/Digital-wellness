@@ -7,14 +7,16 @@ import firebase from 'firebase/compat/app'
 import 'firebase/compat/storage'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {useUpdate} from '../../hooks/useupdate';
 
 const Addpost = () => {
 
-    const loadicon = 'https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif'
+  const loadicon = 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif?20170503175831'
      // const apiurl = 'http://localhost:8002'
   const apiurl = 'https://digital-wellness-brown.vercel.app'
   const { dispatch } = usePostsContext()
   const { user } = useAuthContext()
+  const {update} = useUpdate();
 
   const [title, setTitle] = useState('')
   const [img, setImg] = useState('')
@@ -27,6 +29,7 @@ const Addpost = () => {
 
   const uname = user.username;
   const profile = user.image;
+  const userid = user._id;
 
   const handleupload = async(e)=>{
     setLoad(true)
@@ -83,6 +86,7 @@ const Addpost = () => {
       setEmptyFields(json.emptyFields)
     }
     if (response.ok) {
+      update(user.coin+100,user._id)
      toast.done(`${title} post is added`)
       setTitle('')
       setDescription('')
@@ -106,7 +110,7 @@ const Addpost = () => {
     </h2>
   </div>
 
-  <form id="widget-form" className="widget-post__form" name="form" aria-label="post widget" onSubmit={handleSubmit}>
+  <form id="widget-form" className="widget-post__form" name="form" aria-label="post widget" onSubmit={()=>handleSubmit(e,user._id)}>
 
     <div className="widget-post__content">
 

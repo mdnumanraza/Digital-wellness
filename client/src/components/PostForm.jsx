@@ -23,6 +23,7 @@ const PostForm = () => {
 
   const uname = user.username;
   const profile = user.image;
+  
   const handleupload = async(e)=>{
     const selectedFile = e.target.files[0];
     if(selectedFile){

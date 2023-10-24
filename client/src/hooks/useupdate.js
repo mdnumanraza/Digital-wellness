@@ -1,24 +1,23 @@
 import { useState } from 'react'
 import { useAuthContext } from './useAuthContext'
 
-export const useSignup = () => {
+export const useUpdate = () => {
   // const apiurl = 'http://localhost:8002'
   const apiurl = 'https://digital-wellness-brown.vercel.app'
   const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState(null)
   const { dispatch } = useAuthContext()
 
-  const signup = async (username, email, password,image,desc,coin) => {
+  const update = async (updatedata,userid) => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch( apiurl + '/api/user/signup', {
-      method: 'POST',
+    const response = await fetch(apiurl + `/api/user/update/${userid}`, {
+      method: 'PUT',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ username, email, password ,image, desc,coin})
+      body: JSON.stringify({ updatedata })
     })
     const json = await response.json()
-    console.log(json)
 
     if (!response.ok) {
       setIsLoading(false)
@@ -36,5 +35,5 @@ export const useSignup = () => {
     }
   }
 
-  return { signup, isLoading, error }
+  return { update, isLoading, error }
 }
