@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Addpost = () => {
 
-    const loadicon = 'https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif'
+    const loadicon = 'https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif?20140201131911'
      // const apiurl = 'http://localhost:8002'
   const apiurl = 'https://digital-wellness-brown.vercel.app'
   const { dispatch } = usePostsContext()
@@ -138,7 +138,7 @@ const Addpost = () => {
       <div className="post-actions__attachments">
         
         <div className="btn post-actions__upload attachments--btn">
-          <label for="upload-image" className="post-actions__label">
+          <label htmlFor="upload-image" className="post-actions__label">
              
              <i className="fa fa-upload" aria-hidden="true"></i> 
 
